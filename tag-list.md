@@ -2,110 +2,114 @@
 
 The tags follow the general format:
 
-`<group>_<id>_<physical quantity>_<physical unit>`
+In the MQTT topic structure: `../<entity>_<property>_<unit>/<id>`
 
-`<group>`, `<physical quantity>` and `<physical unit>` are all defined by the following list of tags, whereas `<id>` is to be replaced with an integer index starting from 1 by the data producer.
+In database/REST api: `<entity>_<property>_<unit>_<id>`
 
-## **`anemometer_<id>_speed_ms`**
+I.e the `<id>` has a separate topic level in the MQTT topic structure but is concatenated when persisted in the database and provided in the REST api.
+
+`<entity>`, `<property>` and `<unit>` are all defined by the following list of tags, whereas `<id>` is to be replaced with an integer index starting from 1 by the data producer.
+
+## **`anemometer_speed_mps_<id>`**
 Wind speed (m/s)
 
-## **`anemometer_<id>_direction_deg`**
+## **`anemometer_direction_deg_<id>`**
 Wind direction (degrees)
 
-## **`ballast_tank_<id>_level_percent`**
+## **`ballasttank_level_pct_<id>`**
 Level (precent) of ballast tank
 
-## **`battery_<id>_soc_percent`**
+## **`battery_soc_pct_<id>`**
 State of charge (percent) of battery
 
-## **`battery_<id>_soc_kwh`**
+## **`battery_soc_kwh_<id>`**
 State of charge (kWh) of battery
 
-## **`boiler_<id>_power_kw`**
+## **`boiler_power_kw_<id>`**
 Boiler power output (kW)
 
-## **`boiler_<id>_cons_lph`**
+## **`boiler_fuelcons_lph_<id>`**
 Boiler fuel consumption (litres per hour)
 
-## **`engine_aux_<id>_speed_rpm`**
-Engine speed {rpm} of auxiliary engine
+## **`engineaux_speed_rpm_<id>`**
+Engine speed (rpm) of auxiliary engine
 
-## **`engine_aux_<id>_power_kw`**
+## **`engineaux_power_kw_<id>`**
 Engine power output (kW) of auxilliary engine
 
-## **`engine_aux_<id>_torque_nm`**
+## **`engineaux_torque_nm_<id>`**
 Engine delivered torque (Nm) of auxilliary engine
 
-## **`engine_aux_<id>_cons_lph`**
+## **`engineaux_fuelcons_lph_<id>`**
 Engine fuel consumption (litres per hour) of auxilliary engine
 
-## **`engine_main_<id>_speed_rpm`**
+## **`enginemain_speed_rpm_<id>`**
 Engine speed (rpm) of main engine
 
-## **`engine_main_<id>_power_kw`**
+## **`enginemain_power_kw_<id>`**
 Engine power output (kW) of main engine
 
-## **`engine_main_<id>_torque_nm`**
+## **`enginemain_torque_nm_<id>`**
 Engine delivered torque (Nm) of main engine
 
-## **`engine_main_<id>_cons_lph`**
-Engine fuel consumption (lph, litres per hour) of main engine
+## **`enginemain_fuelcons_lph_<id>`**
+Engine fuel consumption (litres per hour) of main engine
 
-## **`fuel_tank_<id>_level_percent`**
+## **`fueltank_level_pct_<id>`**
 Level (precent) of fuel tank
 
-## **`imu_<id>_accx_mss`**
+## **`positioningsystem_accx_mps2_<id>`**
 Acceleration along body-fixed x-axis (m/s^2)
 
-## **`imu_<id>_accy_mss`**
+## **`positioningsystem_accy_mps2_<id>`**
 Acceleration along body-fixed y-axis (m/s^2)
 
-## **`imu_<id>_accz_mss`**
+## **`positioningsystem_accz_mps2_<id>`**
 Acceleration along body-fixed z-axis (m/s^2)
 
-## **`imu_<id>_accxx_radss`**
+## **`positioningsystem_accxx_radps2_<id>`**
 Angular acceleration around body-fixed x-axis (rad/s^2)
 
-## **`imu_<id>_accyy_radss`**
+## **`positioningsystem_accyy_radps2_<id>`**
 Angular acceleration around body-fixed y-axis (rad/s^2)
 
-## **`imu_<id>_acczz_radss`**
+## **`positioningsystem_acczz_radps2_<id>`**
 Angular acceleration around body-fixed z-axis (rad/s^2)
 
-## **`orientation_<id>_cog_deg`**
+## **`positioningsystem_cog_deg_<id>`**
 Course over ground (degrees)
 
-## **`orientation_<id>_heading_deg`**
+## **`positioningsystem_heading_deg_<id>`**
 Heading angle of vessel (degrees)
 
-## **`orientation_<id>_pitch_deg`**
-Pitch angle of vessel (degrees)
+## **`positioningsystem_latitude_deg_<id>`**
+Latitudinal position (degrees)
 
-## **`orientation_<id>_roll_deg`**
-Roll angle of vessel (degrees)
-
-## **`position_<id>_latitude_deg`**
-Latitudinal postion (degrees)
-
-## **`position_<id>_longitude_deg`**
+## **`positioningsystem_longitude_deg_<id>`**
 Longitudinal position (degrees)
 
-## **`propulsor_<id>_speed_rpm`**
-Rate of revolution of the propulsor (rpm)
+## **`positioningsystem_pitch_deg_<id>`**
+Pitch angle of vessel (degrees)
 
-## **`propulsor_<id>_pitch_percent`**
-Pitch (percent) of the propulsor, in case of a CP propeller.
+## **`positioningsystem_roll_deg_<id>`**
+Roll angle of vessel (degrees)
 
-## **`speed_<id>_sog_kn`**
-Speed over ground (knots)
-
-## **`speed_<id>_stw_kn`**
-Speed through water (knots)
-
-## **`speed_<id>_rot_degm`**
+## **`positioningsystem_rot_degpm_<id>`**
 Rate of turn (degrees / minute)
 
-## **`steering_<id>_angle_deg`**
+## **`positioningsystem_sog_kn_<id>`**
+Speed over ground (knots)
+
+## **`positioningsystem_stw_kn_<id>`**
+Speed through water (knots)
+
+## **`propulsor_speed_rpm_<id>`**
+Rate of revolution of the propulsor (rpm)
+
+## **`propulsor_pitch_pct_<id>`**
+Pitch (percent) of the propulsor, in case of a CP propeller.
+
+## **`steering_angle_deg_<id>`**
 Steering device angle (degrees)
 
 
